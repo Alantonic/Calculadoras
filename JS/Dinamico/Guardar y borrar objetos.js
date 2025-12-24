@@ -1,0 +1,26 @@
+//Dinamico
+
+const user = {id: 1};
+
+user.name = 'Nicolas';
+user.guardar = function(){
+    console.log ('guardando', user.name)
+}
+
+user.guardar();
+
+delete user.name;
+delete user.guardar;
+
+console.log (user)
+
+
+//No modificaras con Freeze ningun propiedades
+
+// const user1 = Object.freeze ({id: 1}); //comentalo para que se quite el error
+
+//No se puede cambiar las propiedades pero si se pueden modificar
+const user1 = Object.seal ({id: 1});
+user1.name = 'Nico';
+user1.id = 2;
+console.log(user1);
